@@ -56,8 +56,7 @@ The ``File`` class
         was originally opened with; ``None`` means to reopen with the original
         mode.
 
-        Returns ``self``, so that it can be used similar to Python's
-        built-in :func:`python:open()` with the ``with`` statement.
+        It can be used as a context manager, e.g. ``with file.open() as f:``.
 
     .. method:: __iter__()
 
@@ -87,10 +86,6 @@ The ``File`` class
     ``truncate``, ``write``, ``writelines``, ``readable()``, ``writable()``,
     and ``seekable()``.
 
-    .. versionchanged:: 1.11
-
-        The ``readable()`` and ``writable()`` methods were added.
-
 .. currentmodule:: django.core.files.base
 
 The ``ContentFile`` class
@@ -104,7 +99,7 @@ The ``ContentFile`` class
 
         from django.core.files.base import ContentFile
 
-        f1 = ContentFile("esta sentencia está en español")
+        f1 = ContentFile("esta frase está en español")
         f2 = ContentFile(b"these are bytes")
 
 .. currentmodule:: django.core.files.images
